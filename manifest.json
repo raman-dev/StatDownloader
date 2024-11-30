@@ -1,0 +1,22 @@
+{
+    "manifest_version":3,
+    "name": "Stat Downloader",
+    "description":"Scrape stats from basketball-reference and official nba website",
+    "version" : "1.0",
+    "permissions":["activeTab","scripting"],
+    "action":{
+        "default_popup":"index.html",
+        "default_icon":"default_icon.png"
+    },
+    "content_scripts" : [
+        {
+            "js":["scripts/content.js"],
+            "matches": [
+                "https://www.basketball-reference.com/*"
+            ]
+        }
+    ],
+    "background":{
+        "service_worker": "scripts/background.js"
+    }
+}
