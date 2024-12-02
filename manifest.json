@@ -3,14 +3,14 @@
     "name": "Stat Downloader",
     "description":"Scrape stats from basketball-reference and official nba website",
     "version" : "1.0",
-    "permissions":["activeTab","scripting"],
+    "permissions":["activeTab","scripting","storage"],
     "action":{
         "default_popup":"index.html",
         "default_icon":"default_icon.png"
     },
     "content_scripts" : [
         {
-            "js":["scripts/content.js"],
+            "js":["scripts/content.js","scripts/messenger.js"],
             "matches": [
                 "https://www.basketball-reference.com/players/*/*/gamelog/*"            
             ]
